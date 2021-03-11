@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { showErrorNotification } from '../Notification';
 
 class Searchbar extends Component {
   state = {
@@ -16,10 +15,7 @@ class Searchbar extends Component {
     event.preventDefault();
     const { query } = this.state;
     const { onSubmit } = this.props;
-    if (!query.trim()) {
-      showErrorNotification('Input search query.', { position: 'top-center' });
-      return this.setState({ query: '' });
-    }
+    if (!query.trim()) return this.setState({ query: '' });
     onSubmit(query.trim().toLowerCase());
     this.setState({ query: '' });
   };

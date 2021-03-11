@@ -1,3 +1,6 @@
+body {
+  background-color: #ccc;
+}
 .btn {
   display: inline-block;
   width: 100%;
@@ -84,8 +87,9 @@
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 label {
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
 }
 .list {
   list-style: none;
@@ -103,17 +107,19 @@ label {
 .list-item {
   position: relative;
   display: block;
+  width: calc(100% - 5px);
   padding: 0.75rem 1.25rem;
-  margin-bottom: -1px;
+  /* margin: 0 auto; */
+  margin-bottom: 5px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
   clear: both;
   font-size: 16px;
   font-weight: bold;
   border-radius: 00.25rem;
-}
-.list-item {
-  margin-bottom: 5px;
+  box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.125);
 }
 .list-item span {
   font-size: 18px;
@@ -130,6 +136,11 @@ label {
   font-size: 10px;
 }
 
+.pre-loader {
+  width: 50vw;
+  height: 50vh;
+  transform: translateX(100%) translateY(100%);
+}
 .loader {
   text-align: center;
 }

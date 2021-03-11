@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import actions from '../../redux/contacts/contacts-actions';
 import { CSSTransition } from 'react-transition-group';
 import Notification from '../Notification';
 import '../Notification/Notification.css';
+import { contactsSelectors, contactsOperations } from '../../redux/contacts';
 
 class ContactForm extends Component {
   state = {
@@ -39,7 +39,7 @@ class ContactForm extends Component {
 
   render() {
     const { name, number, errorMessage } = this.state;
-    const isShow = errorMessage ? true : false; // Консоль ругается, еслт in !== boolean
+    const isShow = errorMessage ? true : false; // Консоль ругается, еслт CSSTransition in !== boolean
     return (
       <>
         <div className="Notification-wrapper">
@@ -79,10 +79,10 @@ class ContactForm extends Component {
   }
 }
 
-const mapStateToProps = state => state.contacts;
+const mapStateToProps = state => ({ items: contactsSelectors.getAllContacts(state) });
 
 const mapDispatchToProps = dispatch => ({
-  onAddContact: (name, number) => dispatch(actions.addContact(name, number)),
+  onAddContact: (name, number) => dispatch(contactsOperations.addContact(name, number)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

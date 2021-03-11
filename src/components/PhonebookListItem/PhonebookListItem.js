@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 // import styles from './PhonebookListItem.module.css';
 
 const PhonebookListItem = ({ name, number, id, onDelete }) => {
@@ -11,12 +10,6 @@ const PhonebookListItem = ({ name, number, id, onDelete }) => {
       </button>
     </li>
   );
-};
-
-PhonebookListItem.propTypes = {
-  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  id: PropTypes.string,
 };
 
 export default PhonebookListItem;

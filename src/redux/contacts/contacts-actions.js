@@ -1,17 +1,15 @@
 import { createAction } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
 
-const addContact = createAction('contact/Add', (name, number) => ({
-  payload: {
-    id: uuidv4(),
-    name,
-    number,
-  },
-}));
+export const fetchContactsRequest = createAction('contacts/fetchContactRequest');
+export const fetchContactsSuccess = createAction('contacts/fetchContactSuccess');
+export const fetchContactsError = createAction('contacts/fetchContactError');
 
-const deleteContact = createAction('contact/Delete');
+export const addContactRequest = createAction('contacts/addContactRequest');
+export const addContactSuccess = createAction('contacts/addContactSuccess');
+export const addContactError = createAction('contacts/addContactError');
 
-const filterContacts = createAction('contact/ChangeFilter');
+export const deleteContactRequest = createAction('contacts/deleteContactRequest');
+export const deleteContactSuccess = createAction('contacts/deleteContactSuccess');
+export const deleteContactError = createAction('contacts/deleteContactError');
 
-// eslint-disable-next-line
-export default { addContact, deleteContact, filterContacts };
+export const filterContacts = createAction('contact/ChangeFilter');
